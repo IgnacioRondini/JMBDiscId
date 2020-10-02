@@ -1,3 +1,8 @@
+This is a fork from dietmar-steiner/JMBDiscId aiming to publish it as a maven dependency, so we can ease its utilisation. I am doing because I couldn't contact the former maintainer. 
+You can find the original readme here:
+
+# Original Licence
+
 This library is released under LGPL 2.1
 
 The library depends on the following other Open Source Projects:
