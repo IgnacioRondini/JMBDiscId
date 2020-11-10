@@ -1,4 +1,16 @@
-This is a fork from dietmar-steiner/JMBDiscId aiming to publish it as a maven dependency, so we can ease its utilisation. I am doing because I couldn't contact the former maintainer. 
+This is a fork from dietmar-steiner/JMBDiscId aiming to publish it as a maven dependency, so we can ease its utilisation. I am doing it because I couldn't contact the former maintainer. 
+
+The Library is released to MavenCentral! So you can now import it to use it in your projects. Check https://search.maven.org/artifact/com.axokoi/JMBDiscId
+
+As a maven dependency, you can add it as:
+
+<dependency>
+  <groupId>com.axokoi</groupId>
+  <artifactId>JMBDiscId</artifactId>
+  <version>1.0.1</version>
+</dependency>
+
+
 You can find the original readme here:
 
 # Original Licence
