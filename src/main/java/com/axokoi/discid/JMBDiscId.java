@@ -135,6 +135,27 @@ public class JMBDiscId {
         return ret;
     }
 
+    /**
+     *
+     * @param drive path to the drive with the audio CD
+     * @return The Table of Content as a String or an empty String if an error happened.
+     * As from Libdiscid doc:
+     * The string has following values separated by space:
+     * first track number last - track number - total length in sectors - offset of 1st track offset of 2nd track ...
+     *
+     * Example: 1 7 164900 150 22460 50197 80614 100828 133318 144712
+     */
+    public String getToC(String drive) {
+        boolean success = libDiscId.discid_read(disc, drive);
+        if (!success) {
+            log.fatal(libDiscId.discid_get_error_msg(disc).getString(0));
+            return "";
+        } else {
+            return libDiscId.discid_get_toc_string(disc);
+        }
+
+    }
+
     @Override
     protected void finalize() {
         if (null != disc) {
@@ -164,4 +185,6 @@ interface LibDiscId extends Library {
     Pointer discid_get_default_device();
 
     Pointer discid_get_error_msg(Pointer disc);
+
+    String discid_get_toc_string(Pointer disc);
 }
